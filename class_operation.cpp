@@ -72,4 +72,10 @@ int main(){
 
     return 0;
 }
-
+/*output:
+first complex number is: 5+4i
+second complex number is: 2+1i
+addition of complex number is: 7+5i
+subtraction of complex number is: 3+3i
+multiplication of complex number is: 14+-3i
+PS D:\shruti badhe>*/
