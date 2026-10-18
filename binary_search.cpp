@@ -46,3 +46,15 @@ cin>>x;
    return 0;
 }
 
+/*output:
+How many elements? 6
+Enter 6 elements:
+10
+15
+20
+25
+30
+35
+Enter element to search: 25
+Element found at index: 3
+PS D:\shruti badhe>*/
