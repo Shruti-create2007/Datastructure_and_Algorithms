@@ -71,7 +71,16 @@ int main(){
     cout<<endl;
 
     return 0;
-
-
-
 }
+/*output
+How many elements? 5
+Enter 5 elements:
+10
+20
+30
+40
+50
+Enter element to search: 
+34
+Element not found
+PS D:\shruti badhe> */
