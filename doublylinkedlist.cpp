@@ -1,90 +1,108 @@
 #include<iostream>
 using namespace std;
-
-class node{
+class node
+{
     public:
     int data;
-    node* next;
-    node* prev;
-
-    node(int x){
+    node *next;
+    node *prev;
+    node(int x)
+    {
         data=x;
         next=NULL;
         prev=NULL;
-
     }
 };
+class linked_list
+{
+    public:
+    node *head;
+    linked_list()
+    {
+        head=NULL;
 
-class linkedlist{
-    private:
-node* head;
-
-public:
-linkedlist(){
-head=NULL;
-}
-
-void insert(int x){
-    node* p=new node(x);
-
-    if(head==NULL){
-        head=p;
-        return;
         
     }
-    node* q=head;
-    while(q->next!=NULL){
+    
+
+ void insert(int x)
+ {
+    node *p=new node(x);
+    if(head==NULL)
+    {
+        head=p;
+    }
+    else
+    {
+        node *q=head;
+        while(q->next!=NULL)
+        q=q->next;
+        q->next=p;
+        p->prev=q;
+    }
+ }
+ void display(void)
+ {
+    node *q;
+    q=head;
+    while(q!=NULL)
+    {
+        cout<<q->data<<"<=>";
         q=q->next;
     }
-    q->next=p;
-    p->prev = q;
-}
 
-void display(){
-    node* q=head;
-    while(q->next!=NULL){
-        cout<<"the linked list is:"<<endl<<q->data<<"->";
-        q=q->next;
-    }
-}
-
-
-void remove(int x){
-    node* p=NULL;
-    node* q=head;
-
-    if(head->data==x){
+ }
+ void remove(int x)
+ {
+    node *p=NULL;
+    if(head->data==x)
+    {
         p=head;
         head=head->next;
         delete p;
+        return;
     }
+    node *q=head;
+    while(q->next!=NULL)
+    {
+    if(q->next->data==x)
+    {
+        p=q->next;
+        q->next=p->next;
+        p->next->prev=q;
+        delete p;
+        return;
+    }
+    q=q->next;
 
-    while(q->next!=NULL){
-        if(q->next->data==x){
-            p=q->next;
-            q->next=p->next;
-            p->next->prev=q;
-            delete p;
-            return;
-        }
-        q=q->next;
     }
-}
+    cout<<"Data not found in list"<<endl;
+ }
 };
 
-int main(){
-    linkedlist list;
-
+int main()
+{
+    linked_list list;
     list.insert(10);
     list.insert(20);
     list.insert(30);
     list.insert(40);
-
+    list.insert(50);
+    cout<<"\nList before removing element:"<<endl;
     list.display();
-
-    list.remove(30);
+    cout<<endl;
+    list.remove(40);
+    cout<<"\nList after removing element:"<<endl;
     list.display();
-
     return 0;
 
 }
+/*output:
+PS C:\Users\Students> cd "d:\shruti badhe\" ; if ($?) { g++ double_linkedlist.cpp -o double_linkedlist } ; if ($?) { .\double_linkedlist }
+
+List before removing element:
+10<=>20<=>30<=>40<=>50<=>
+
+List after removing element:
+10<=>20<=>30<=>50<=>
+PS D:\shruti badhe> */
