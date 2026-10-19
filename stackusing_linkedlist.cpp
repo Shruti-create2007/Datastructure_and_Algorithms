@@ -88,7 +88,8 @@ int main()
     return 0;
 }
 
-/*Removed10
+/*output:
+Removed10
 33
 55
 77
