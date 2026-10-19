@@ -93,13 +93,13 @@ int main()
     return 0;
 
 }
-//output:
+/*output:
 PS D:\shruti badhe> cd "d:\shruti badhe\" ; if ($?) { g++ single_linkedlist.cpp -o single_linkedlist } ; if ($?) { .\single_linkedlist }
 List before removing element:
 10=>20=>30=>40=>50=>
 List after removing element:
 10=>20=>40=>50=>
-PS D:\shruti badhe> 
+PS D:\shruti badhe>*/ 
 
 
 
